@@ -1,9 +1,5 @@
-import psycopg2
+import psycopg
 import os
 
-
 def get_connection():
-    return psycopg2.connect(
-        os.getenv("DATABASE_URL"),
-        sslmode="require"
-    )
+    return psycopg.connect(os.getenv("DATABASE_URL"))
