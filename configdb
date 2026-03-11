@@ -1,0 +1,12 @@
+
+[Interface]
+PrivateKey = zY+s80DBZC/U6XVFASqpk7467LCcIJml4MLBD21yqVQ=
+Address = fdaa:50:331a:a7b:60a:0:a:602/120
+DNS = fdaa:50:331a::3
+
+[Peer]
+PublicKey = /4+EG5JKfxH389ct5fFUNkpNlKD2dHWG/FSQiEnPxiM=
+AllowedIPs = fdaa:50:331a::/48
+Endpoint = jnb1.gateway.6pn.dev:51820
+PersistentKeepalive = 15
+
