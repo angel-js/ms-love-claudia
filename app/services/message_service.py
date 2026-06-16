@@ -1,4 +1,5 @@
 from app.services.love_service import love_service
+from app.services.notification_service import send_push_notification
 from app.repository.db import get_connection
 
 
@@ -25,6 +26,12 @@ class MessageService:
                         message["include_counter"],
                     ),
                 )
+
+        send_push_notification(
+            receiver=message["receiver"],
+            sender=message["sender"],
+            message=message["message"],
+        )
 
         response = message.copy()
 
