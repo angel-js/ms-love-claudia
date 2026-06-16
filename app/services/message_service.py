@@ -16,8 +16,8 @@ class MessageService:
             with conn.cursor() as cur:
                 cur.execute(
                     """
-                    INSERT INTO public.messages (sender, receiver, message, include_counter)
-                    VALUES (%s, %s, %s, %s)
+                    INSERT INTO public.messages (sender, receiver, message, include_counter, created_at)
+                    VALUES (%s, %s, %s, %s, NOW())
                     """,
                     (
                         message["sender"],
@@ -83,7 +83,7 @@ class MessageService:
                     SELECT sender, receiver, message, include_counter, created_at
                     FROM public.messages
                     WHERE receiver = %s
-                    ORDER BY created_at DESC
+                    ORDER BY created_at DESC NULLS LAST
                     LIMIT 1
                     """,
                     (user,),
